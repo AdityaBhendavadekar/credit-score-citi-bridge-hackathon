@@ -1,0 +1,41 @@
+curl -X GET "http://127.0.0.1:5000/credit-score" \
+     -H "Content-Type: application/json" \
+     -d '{"turnover": 4500000, "income": 1200000, "expenses": 85, "past_defaults": 1, "bank_status": "Stable", "market_trend": "Growth"}'
+{
+  "credit_score": 642.87
+}
+
+
+curl -X GET "http://127.0.0.1:5000/bank-stability" \
+     -F "file=@new_transactions.csv"
+{
+  "RF_Prediction": "Low Volume"
+}
+
+curl -X GET "http://127.0.0.1:5000/monthly-credit-scores"
+{
+  "April": 735,
+  "August": 755,
+  "December": 775,
+  "February": 725,
+  "January": 720,
+  "July": 750,
+  "June": 745,
+  "March": 730,
+  "May": 740,
+  "November": 770,
+  "October": 765,
+  "September": 760
+}
+
+curl -X GET "http://127.0.0.1:5000/recent-activity"
+{
+  "hard_enquiry": {
+    "month": "February",
+    "year": 2025
+  },
+  "new_credit_line": {
+    "month": "March",
+    "year": 2025
+  }
+}
